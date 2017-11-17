@@ -1,0 +1,6 @@
+ISA_AOFD_ER (in the sense of Medical): countrycode, disease, study_design --> medicine (0.0196078431372549)
+#
+US,Fever,clinical
+14,19,6,
+51,
+Advil,IbuProfen,

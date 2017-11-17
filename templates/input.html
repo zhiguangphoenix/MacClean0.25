@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>MacClean</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <!-- Bootstrap Css -->
+    <link href="../static/bootstrap-assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Style -->
+    <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+
+    <link href="../static/plugins/owl-carousel/owl.carousel.css" rel="stylesheet">
+    <link href="../static/plugins/owl-carousel/owl.theme.css" rel="stylesheet">
+    <link href="../static/plugins/owl-carousel/owl.transitions.css" rel="stylesheet">
+    <link href="../static/plugins/Lightbox/dist/css/lightbox.css" rel="stylesheet">
+    <link href="../static/plugins/Icons/et-line-font/style.css" rel="stylesheet">
+    <link href="../static/plugins/animate.css/animate.css" rel="stylesheet">
+    <link href="../static/css/main.css" rel="stylesheet">
+    <style>
+        .slider-box {
+            font-family: Microsoft Yahei;
+            padding-bottom: 10px
+        }
+
+        .slider-box .item {
+            padding: 10px
+        }
+
+        .slider-box .item .tag, .slider-box .item .slider, .slider-box .item .val {
+            float: left;
+            margin-right: 18px
+        }
+
+        .slider-box .item .slider {
+            width: 400px
+        }
+
+        .slider-box .item .slider div {
+            background: #8FBF0B;
+            border: none;
+            height: 0.5em;
+            margin-top: 0.5em
+        }
+
+        .slider-box .item .slider div .ui-slider-handle {
+            background: #F4F3F1;
+            width: 1em;
+            height: 1em;
+            border-radius: 1em
+        }
+
+        .slider-box .item .val input {
+            border: none;
+            border-bottom: 1px solid #ABADA8;
+            background: none;
+            padding: 0.1em 1em;
+            color: #E4531C;
+            font-weight: bold;
+            font-size: 1em;
+            width: 5em;
+            text-align: center
+        }
+
+        .clr {
+            clear: both
+        }
+
+    </style>
+    <!-- Icons Font -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <![endif]-->
+    <style>
+        #feedback {
+            font-size: 1em;
+        }
+
+        #selectable .ui-selecting {
+            background: #FECA40;
+        }
+
+        #selectable .ui-selected {
+            background: #2b542c;
+            color: white;
+        }
+
+        #selectable {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 20%;
+        }
+
+        #selectable li {
+            margin: 1px;
+            padding: 0;
+            font-size: 1em;
+            height: 30px;
+        }
+
+    </style>
+    <style>
+        #country_feedback {
+            font-size: 1em;
+        }
+
+        #country_selectable .ui-selecting {
+            background: #FECA40;
+        }
+
+        #country_selectable .ui-selected {
+            background: #2b542c;
+            color: white;
+        }
+
+        #country_selectable {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 20%;
+        }
+
+        #country_selectable li {
+            margin: 1px;
+            padding: 0;
+            font-size: 1em;
+            height: 30px;
+        }
+
+    </style>
+    <script>
+        $(function () {
+            $("#selectable").selectable({
+                stop: function () {
+                    var result = $("#select-result").empty();
+                    $(".ui-selected", this).each(function () {
+                        var index = $("#selectable li").index(this);
+                        result.append();
+                    });
+                }
+            });
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $("#country_selectable").selectable({
+                stop: function () {
+                    var result = $("#country_select-result").empty();
+                    $(".ui-selected", this).each(function () {
+                        var index = $("#country_selectable li").index(this);
+                        result.append();
+                    });
+                }
+            });
+        });
+
+    </script>
+
+
+</head>
+<body>
+
+
+<section class="main-header">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img src="../static/img/logo/mcmaster_logo.png" class="img-responsive"
+                                                      alt="logo" style="height:50px; width:40px "></a>
+            </div>
+            <div class="collapse navbar-collapse text-center" id="bs-example-navbar-collapse-1">
+                <div class="col-md-8 col-xs-12 nav-wrap">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#" class="page-scroll">Home</a></li>
+                        <li><a href="#" class="page-scroll">Tools</a></li>
+                        <li><a href="#" class="page-scroll">About</a></li>
+                        <li><a href="#" class="page-scroll">Source Code</a></li>
+                        <li><a href="#" class="page-scroll">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="social-media hidden-sm hidden-xs">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</section>
+
+<!---->
+<!--<section style="margin-top: 100px">-->
+<div style="margin-top: 100px">
+    <div class="row">
+        <div style="margin-left: 300px">
+
+            <div class="col-lg-5">
+                <form>
+                    <fieldset>
+                        <legend>Sample Datasets</legend>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optionsRadios" id="dataset1" value="dataset1">
+                                <p class="btn" style="font-size: large ;size:10px;margin-top: -5px">Clinicaltrails</p>
+                            </label>
+                            <span class="help-block">introduction</span>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optionsRadios" id="dataset2" value="dataset2">
+                                <p class="btn" style="font-size: large ;size:10px;margin-top: -5px">Dataset 2</p>
+                            </label>
+                            <span class="help-block">introduction</span>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optionsRadios" id="dataset3" value="dataset3">
+                                <p class="btn" style="font-size: large ;size:10px;margin-top: -5px">Dataset 3</p>
+                            </label>
+                            <span class="help-block">introduction</span>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optionsRadios" id="dataset4" value="dataset3">
+                                <p class="btn" style="font-size: large ;size:10px;margin-top: -5px">Upload your own
+                                    dataset</p>
+                            </label>
+                            <p style=" margin-left: 30px;"><input type=file name=file1></p>
+                        </div>
+
+                    </fieldset>
+                </form>
+            </div>
+            <div class="col-lg-6">
+                <form>
+                    <fieldset>
+                        <legend>Algorithms</legend>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optionsRadios" id="fastofd" value="fastofd">
+                                Fast OFD
+                            </label>
+                            <span class="help-block">introduction</span>
+                        </div>
+                        <legend></legend>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="synonymofd" value="synonymofd">
+                                        Synonym OFD
+                                    </label>
+                                    <span class="help-block">introduction</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+
+                                <input type="checkbox"/>
+                                <p class="btn" style="font-size: large ;size:10px">Include approximate ofds</p>
+
+                            </div>
+                        </div>
+                        <legend></legend>
+
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="isaofd" value="isaofd">
+                                        ISA OFD
+                                    </label>
+                                    <span class="help-block">introduction</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+
+                                <input type="checkbox"/>
+                                <p class="btn" style="font-size: large ;size:10px">Include approximate ofds</p>
+
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<legend></legend>
+<div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-9">
+        <legend>Ontology Setting</legend>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span12">
+
+
+                    <div>
+
+                        <span class="label label-info" style="display: none" id="ontology1"> Medicine_Ontology </span>
+
+                        <span class="label label-info" style="display: none;margin-top: 5px" id="ontology2"> Country_Ontology </span>
+
+                    </div>
+
+
+                    <div class="tabbable" id="tabs-158979">
+                        <ul class="nav nav-tabs">
+                            <li class="active">
+                                <a href="#panel-provided_ontology" data-toggle="tab">Sample Ontologies</a>
+                            </li>
+                            <li>
+                                <a href="#panel-576475" data-toggle="tab">Upload your own Ontology</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="panel-provided_ontology">
+                                <div class="row-fluid">
+                                    <div class="span12">
+                                        <div class="accordion" id="ontology_medicine">
+                                            <div class="accordion-group">
+                                                <div class="accordion-heading"><a
+                                                        class="list-group-item list-group-item-success collapsed"
+                                                        data-toggle="collapse"
+                                                        data-parent="#ontology_medicine"
+                                                        href="#ontology_medicine_info"> Medicine</a></div>
+                                                <div id="ontology_medicine_info" class="accordion-body ">
+                                                    <div class="accordion-inner" style="background-color:#BEBEBE">
+
+                                                        <ul class="list-group">
+                                                            <li class="list-group-item">
+
+                                                                <div class="row">
+                                                                    <div class="span12">
+                                                                        <div class="col-lg-2">
+                                                                            Ontology Type:
+                                                                        </div>
+                                                                        <div class="col-lg-2">
+                                                                            <div class="radio">
+                                                                                <label>
+                                                                                    <input type="radio"
+                                                                                           name="optionsRadios"
+                                                                                           id="ontology_type_isa"
+                                                                                           value="isa_ontology">
+                                                                                    ISA OFD
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-4">
+                                                                            <div class="radio">
+                                                                                <label>
+                                                                                    <input type="radio"
+                                                                                           name="optionsRadios"
+                                                                                           id="ontology_type_syn"
+                                                                                           value="syn_ontology">
+                                                                                    Synonym OFD
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li class="list-group-item">
+                                                                <div class="row">
+                                                                    <div class="span12">
+                                                                        <div class="col-lg-2">
+                                                                            Threshold:
+                                                                        </div>
+                                                                        <div class="col-lg-9">
+                                                                            <div class="slider-box">
+                                                                                <div class="item">
+                                                                                    <div class="slider">
+                                                                                        <div id="threshold"></div>
+                                                                                    </div>
+                                                                                    <div class="val"><input value="1"
+                                                                                                            name="threshold"/>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="clr"></div>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </li>
+                                                            <li class="list-group-item">
+                                                                <div class="row">
+                                                                    <div class="span12">
+                                                                        <div class="col-lg-2">
+                                                                            Type of Approximation:
+                                                                        </div>
+                                                                        <div class="col-lg-3">
+                                                                            <div class="radio">
+                                                                                <label>
+                                                                                    <input type="radio"
+                                                                                           name="optionsRadios"
+                                                                                           id="max_error"
+                                                                                           value="max_error">
+                                                                                    Maximum Error
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-3">
+                                                                            <div class="radio">
+                                                                                <label>
+                                                                                    <input type="radio"
+                                                                                           name="optionsRadios"
+                                                                                           id="min_sup"
+                                                                                           value="min_sup">
+                                                                                    Minimum Support
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li class="list-group-item">
+
+                                                                <div class="row">
+                                                                    <div class="span12">
+                                                                        <div class="col-lg-2">
+                                                                            Sense:
+                                                                        </div>
+                                                                        <div class="col-lg-4">
+                                                                            <input type="text" class="form-control"
+                                                                                   placeholder="Can be anything"
+                                                                                   aria-describedby="basic-addon1">
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </li>
+                                                            <li class="list-group-item">
+                                                                <div class="row">
+                                                                    <div class="span12">
+                                                                        <div class="col-lg-2">
+                                                                            Name of Attribute:
+                                                                        </div>
+                                                                        <div class="col-lg-9">
+
+                                                                            <p id="feedback">
+                                                                                <span>You have chosed：</span> <span
+                                                                                    id="select-result">nothing</span>
+                                                                            </p>
+
+                                                                            <ol id="selectable">
+                                                                                <li class="ui-widget-content">
+                                                                                    id
+                                                                                </li>
+                                                                                <li class="ui-widget-content">
+                                                                                    countrycode
+                                                                                </li>
+                                                                                <li class="ui-widget-content">
+                                                                                    country
+                                                                                </li>
+                                                                                <li class="ui-widget-content">disease
+                                                                                </li>
+                                                                                <li class="ui-widget-content">medicine
+                                                                                </li>
+                                                                                <li class="ui-widget-content">status
+                                                                                </li>
+                                                                                <li class="ui-widget-content">
+                                                                                    study_design
+                                                                                </li>
+                                                                            </ol>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+
+                                                            </li>
+                                                            <li class="list-group-item">
+
+                                                                <div class="row">
+
+
+                                                                    <div class="col-lg-5">
+
+                                                                        <button class="btn btn-large btn-success "
+                                                                                type="button"
+                                                                                style="margin-left: 37%"
+                                                                                onclick="add_medicine()">
+                                                                            ADD THIS AS ONE ONTOLOGY
+                                                                        </button>
+
+                                                                    </div>
+                                                                    <div class="col-lg-5">
+
+                                                                        <button class="btn btn-large btn-warning "
+                                                                                type="button"
+                                                                                style="margin-left: 37%"
+                                                                                onclick="del_medicine()">
+                                                                            DELETE THIS ONTOLOGY
+                                                                        </button>
+
+                                                                    </div>
+                                                                </div>
+
+
+                                                            </li>
+
+
+                                                        </ul>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion" id="ontology_country">
+                                            <div class="accordion-group">
+                                                <div class="accordion-heading"><a
+                                                        class="list-group-item list-group-item-success collapsed"
+                                                        data-toggle="collapse"
+                                                        data-parent="#ontology_country"
+                                                        href="#ontology_country_info"> Country</a></div>
+                                                <div id="ontology_country_info" class="accordion-body ">
+                                                    <div class="accordion-inner" style="background-color:#BEBEBE">
+
+                                                        <ul class="list-group">
+                                                            <li class="list-group-item">
+
+                                                                <div class="row">
+                                                                    <div class="span12">
+                                                                        <div class="col-lg-2">
+                                                                            Ontology Type:
+                                                                        </div>
+                                                                        <div class="col-lg-2">
+                                                                            <div class="radio">
+                                                                                <label>
+                                                                                    <input type="radio"
+                                                                                           name="optionsRadios"
+                                                                                           id="_country_ontology_type_isa"
+                                                                                           value="isa_ontology">
+                                                                                    ISA OFD
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-4">
+                                                                            <div class="radio">
+                                                                                <label>
+                                                                                    <input type="radio"
+                                                                                           name="optionsRadios"
+                                                                                           id="country_ontology_type_syn"
+                                                                                           value="syn_ontology">
+                                                                                    Synonym OFD
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li class="list-group-item">
+                                                                <div class="row">
+                                                                    <div class="span12">
+                                                                        <div class="col-lg-2">
+                                                                            Threshold:
+                                                                        </div>
+                                                                        <div class="col-lg-9">
+                                                                            <div class="slider-box">
+                                                                                <div class="item">
+                                                                                    <div class="slider">
+                                                                                        <div id="country_threshold"></div>
+                                                                                    </div>
+                                                                                    <div class="val"><input value="1"
+                                                                                                            name="country_threshold"/>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="clr"></div>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </li>
+                                                            <li class="list-group-item">
+                                                                <div class="row">
+                                                                    <div class="span12">
+                                                                        <div class="col-lg-2">
+                                                                            Type of Approximation:
+                                                                        </div>
+                                                                        <div class="col-lg-3">
+                                                                            <div class="radio">
+                                                                                <label>
+                                                                                    <input type="radio"
+                                                                                           name="optionsRadios"
+                                                                                           id="country_max_error"
+                                                                                           value="max_error">
+                                                                                    Maximum Error
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-3">
+                                                                            <div class="radio">
+                                                                                <label>
+                                                                                    <input type="radio"
+                                                                                           name="optionsRadios"
+                                                                                           id="country_min_sup"
+                                                                                           value="min_sup">
+                                                                                    Minimum Support
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li class="list-group-item">
+
+                                                                <div class="row">
+                                                                    <div class="span12">
+                                                                        <div class="col-lg-2">
+                                                                            Sense:
+                                                                        </div>
+                                                                        <div class="col-lg-4">
+                                                                            <input type="text" class="form-control"
+                                                                                   placeholder="Can be anything"
+                                                                                   aria-describedby="basic-addon1">
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </li>
+                                                            <li class="list-group-item">
+
+                                                                <div class="row">
+                                                                    <div class="span12">
+                                                                        <div class="col-lg-2">
+                                                                            Name of Attribute:
+                                                                        </div>
+                                                                        <div class="col-lg-9">
+
+                                                                            <p id="country_feedback">
+                                                                                <span>You have chosed：</span> <span
+                                                                                    id="country_select-result">nothing</span>
+                                                                            </p>
+
+                                                                            <ol id="country_selectable">
+                                                                                <li class="ui-widget-content">
+                                                                                    id
+                                                                                </li>
+                                                                                <li class="ui-widget-content">
+                                                                                    countrycode
+                                                                                </li>
+                                                                                <li class="ui-widget-content">
+                                                                                    country
+                                                                                </li>
+                                                                                <li class="ui-widget-content">disease
+                                                                                </li>
+                                                                                <li class="ui-widget-content">medicine
+                                                                                </li>
+                                                                                <li class="ui-widget-content">status
+                                                                                </li>
+                                                                                <li class="ui-widget-content">
+                                                                                    study_design
+                                                                                </li>
+                                                                            </ol>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+
+                                                            </li>
+                                                            <li class="list-group-item">
+
+                                                                <div class="row">
+
+
+                                                                    <div class="col-lg-5">
+
+                                                                        <button class="btn btn-large btn-success "
+                                                                                type="button"
+                                                                                style="margin-left: 37%"
+                                                                                onclick="add_country()">
+                                                                            ADD THIS AS ONE ONTOLOGY
+                                                                        </button>
+
+                                                                    </div>
+                                                                    <div class="col-lg-5">
+
+                                                                        <button class="btn btn-large btn-warning "
+                                                                                type="button"
+                                                                                style="margin-left: 37%"
+                                                                                onclick="del_country()">
+                                                                            DELETE THIS ONTOLOGY
+                                                                        </button>
+
+                                                                    </div>
+                                                                </div>
+
+
+                                                            </li>
+
+
+                                                        </ul>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="tab-pane " id="panel-576475">
+                                1234
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <div class="col-lg-3"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <button type="button"
+            class="btn  btn-md btn-block"
+
+            id="test_btn">
+    <span class=" glyphicon glyphicon-wrench" aria-hidden="true"></span>
+        Input
+    </button>
+</div>
+<script>
+    $("#threshold").slider({
+        min: 1,
+        max: 5,
+        step: 1,
+        value: $('input[name="threshold"]').val(),
+        slide: function (event, ui) {
+            $('input[name="threshold"]').val(ui.value)
+        }
+    });
+
+</script>
+<script>
+    $("#country_threshold").slider({
+        min: 1,
+        max: 5,
+        step: 1,
+        value: $('input[name="country_threshold"]').val(),
+        slide: function (event, ui) {
+            $('input[name="country_threshold"]').val(ui.value)
+        }
+    });
+
+</script>
+<script>
+    function add_medicine() {
+        document.getElementById("ontology1").style.display="block";
+    }
+
+</script>
+<script>
+    function del_medicine() {
+        document.getElementById("ontology1").style.display="none";
+    }
+
+</script>
+
+<script>
+    function add_country() {
+        document.getElementById("ontology2").style.display="block";
+    }
+
+</script>
+<script>
+    function del_country() {
+        document.getElementById("ontology2").style.display="none";
+    }
+
+</script>
+
+
+</body>
+</html>

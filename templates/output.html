@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>MacClean</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <!-- Bootstrap Css -->
+    <link href="../static/bootstrap-assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Style -->
+    <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <link href="../static/plugins/owl-carousel/owl.carousel.css" rel="stylesheet">
+    <link href="../static/plugins/owl-carousel/owl.theme.css" rel="stylesheet">
+    <link href="../static/plugins/owl-carousel/owl.transitions.css" rel="stylesheet">
+    <link href="../static/plugins/Lightbox/dist/css/lightbox.css" rel="stylesheet">
+    <link href="../static/plugins/Icons/et-line-font/style.css" rel="stylesheet">
+    <link href="../static/plugins/animate.css/animate.css" rel="stylesheet">
+    <link href="../static/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+</head>
+<body>
+
+<section class="main-header">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img src="../static/img/logo/mcmaster_logo.png" class="img-responsive"
+                                                      alt="logo" style="height:50px; width:40px "></a>
+            </div>
+            <div class="collapse navbar-collapse text-center" id="bs-example-navbar-collapse-1">
+                <div class="col-md-8 col-xs-12 nav-wrap">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#" class="page-scroll">Home</a></li>
+                        <li><a href="#" class="page-scroll">Tools</a></li>
+                        <li><a href="#" class="page-scroll">About</a></li>
+                        <li><a href="#" class="page-scroll">Source Code</a></li>
+                        <li><a href="#" class="page-scroll">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="social-media hidden-sm hidden-xs">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</section>
+
+<section style="margin-top: 100px">
+    <legend style="margin-left: 30px"> Configuration Information</legend>
+    <div class="row">
+
+        <div class="col-lg-7" style="margin-left: 130px">
+            <table class="table">
+                <tr class="info">
+                    <th>Number of Rows:<a id="num_row"></a></th>
+                    <th></th>
+                </tr>
+                <tr class="info">
+                    <th>Number of Columns:<a id="num_col"></a></th>
+                    <th></th>
+                </tr>
+                <tr class="info">
+                    <th>Threshold:<a id="threshold"></a></th>
+                    <th></th>
+                </tr>
+                <tr class="info">
+                    <th>Number of FDs:<a id="num_fd"></a></th>
+                    <th></th>
+                </tr>
+                <tr class="info">
+                    <th>Number of OFDs:<a id="num_ofd"></a></th>
+                    <th></th>
+                </tr>
+
+
+            </table>
+
+        </div>
+
+
+    </div>
+
+</section>
+<script>
+</script>
+<section>
+    <legend style="margin-left: 30px"> Details</legend>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="tabbable" id="tabs-10414">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a href="#panel-data" data-toggle="tab">data</a>
+                        </li>
+                        <li>
+                            <a href="#panel-fd" data-toggle="tab">fd</a>
+                        </li>
+
+                        <li>
+                            <a href="#panel-ofd" data-toggle="tab">ofd</a>
+                        </li>
+                        <li>
+                            <a href="#panel-syn_aofd" data-toggle="tab">syn_aofd</a>
+                        </li>
+                        <li>
+                            <a href="#panel-isa_aofd" data-toggle="tab">isa_aofd</a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="panel-data">
+                            <table class="table" id="data_table">
+
+                            </table>
+                        </div>
+                        <div class="tab-pane active" id="panel-fd">
+                            <div class="list-group" id="fds">
+                            </div>
+                        </div>
+
+                         <div class="tab-pane active" id="panel-ofd">
+                            <div class="list-group" id="ofds">
+                            </div>
+                        </div>
+
+                        <div class="tab-pane active" id="panel-syn_aofd">
+
+
+                        </div>
+
+                        <div class="tab-pane active" id="panel-isa_aofd">
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+</section>
+
+<script>
+
+    obj = JSON.parse({{result|tojson}});
+    var num_row=obj.NUM_ROW;
+    var num_col=obj.NUM_COL;
+    var threshold=obj.THRESHOLD;
+    var num_fd=obj.NUM_FD;
+    var num_ofd=obj.NUM_OFD;
+    var data=obj.DATA;
+    var attributes= obj.ATTRIBUTES;
+    var fd=obj.FD;
+    var ofd=obj.OFD;
+    var aofd=obj.AOFD;
+    <!--var id =obj.ID.toString();-->
+
+    function addInfo(parentId,num){
+        var parent=document.getElementById(parentId);
+        parent.innerHTML="  "+num;
+    }
+
+    addInfo("num_row",num_row);
+    addInfo("num_col",num_col);
+    addInfo("threshold",threshold);
+    addInfo("num_fd",num_fd);
+    addInfo("num_ofd",num_ofd);
+
+    <!--parentId should be a table-->
+
+    function postData(parentId,attributes,data_list){
+        postAttributes(parentId,attributes);
+        postTableBody(parentId,data);
+    }
+    function postAttributes(parentId,attributes){
+
+        var parent = document.getElementById(parentId);
+
+        var thead = document.createElement("thead");
+        var tr=document.createElement("tr");
+        for (var i=0;i<attributes.length;i++)
+        {
+            var attr=document.createElement("th");
+            attr.innerHTML=attributes[i];
+            tr.append(attr);
+        }
+        thead.append(tr);
+        parent.append(thead);
+    }
+
+
+    function postTableBody(parentId,data){
+        var parent = document.getElementById(parentId);
+        var tbody= document.createElement("tbody");
+        for (var i=0;i<data.length;i++)
+        {
+            var tr=document.createElement("tr");
+
+            var tupple=data[i];
+            for (var x=0;x<tupple.length;x++){
+                var th=document.createElement("th");
+                th.innerHTML=tupple[x];
+                tr.append(th);
+            }
+            tr.className="info";
+            tbody.append(tr);
+        }
+        parent.append(tbody);
+    }
+    postData("data_table",attributes,data);
+
+    function postD(parentId,ds){
+
+        var parent = document.getElementById(parentId);
+
+        for(var i=0;i<ds.length;i++){
+            var a =document.createElement("a");
+            a.className="list-group-item list-group-item-success";
+            a.innerHTML=ds[i];
+            parent.append(a);
+        }
+    }
+    postD("fds",fd);
+    postD("ofds",ofd);
+
+    var syn= aofd[0];
+    var isa= aofd[1];
+
+    var syn_parent= document.getElementById("panel-syn_aofd");
+
+    for(var i=0;i<syn.length;i++){
+
+        json=syn[i];
+
+        var per_aofd=document.createElement("div");
+
+        postAofd(per_aofd,json);
+
+        syn_parent.append(per_aofd);
+
+    }
+
+    function postAofd(parent,json){
+
+        var fd= json.FD;
+        var a = document.createElement("legend")
+        a.className="list-group-item list-group-item-info";
+        a.innerHTML=fd;
+        parent.append(a);
+
+        postViolation(parent,json);
+
+    }
+
+    function postViolation(parent,json){
+
+        var violation_list=json.VIOLATION;
+
+
+
+        for(var i =0;i<violation_list.length;i++){
+
+            var violation= violation_list[i];
+            var pattern = violation.PATTERN;
+
+            var vio = document.createElement("a");
+            vio.className="list-group-item list-group-item-warning";
+            vio.href="#";
+            vio.innerHTML=pattern;
+            parent.append(vio);
+
+            postVio(parent,violation);
+
+        }
+
+    }
+
+    function postVio(parent,violation){
+
+        <!--var vid=violation.VID.toString();-->
+
+        var table= document.createElement("table");
+        table.width="100%";
+        var thead= document.createElement("thead");
+        var tr= document.createElement("tr");
+
+        for (var x =0;x < attributes.length;x++){
+
+            var th = document.createElement("th");
+            th.innerHTML=attributes[x];
+            tr.append(th);
+
+        }
+
+        parent.append(table);
+        table.append(thead);
+        thead.append(tr);
+
+        var corrects = violation.CORRECT_TUPPLES;
+
+        for(var q =0; q< corrects.length;q++){
+
+            var correct = corrects[q];
+
+            var cells = correct.CELLS;
+
+            var trs = document.createElement("tr");
+
+            <!--tr.style.background="#7CCD7C";-->
+            trs.className="success";
+
+            for (var w = 0; w< cells.length; w++){
+
+                var th = document.createElement("th");
+
+                th.innerHTML = cells[w];
+
+                trs.append(th);
+            }
+
+            table.append(trs);
+
+        }
+
+        var errors = violation.ERROR_TUPPLES;
+
+        for(var q =0; q< errors.length;q++){
+
+            var error = errors[q];
+
+            var cells = error.CELLS;
+
+            var tr = document.createElement("tr");
+
+            tr.style.background="#EE7942";
+            <!--tr.setAttribute("className","info");-->
+
+
+
+
+
+            for (var w = 0; w< cells.length; w++){
+
+                var th = document.createElement("th");
+
+                th.innerHTML = cells[w];
+
+                tr.append(th);
+            }
+
+            table.append(tr);
+
+        }
+
+        var error_legend = document.createElement("legend");
+        var error_span = document.createElement("span");
+        error_span.className="label label-danger";
+        error_span.style="margin-top:-4px";
+        error_span.innerHTML="Fix Error Tupple";
+        error_legend.append(error_span);
+        parent.append(error_legend);
+
+
+        var fix_table= document.createElement("table");
+        fix_table.width="100%";
+        fix_table.style="margin-top=30px";
+        var fix_thead= document.createElement("thead");
+        var fix_tr= document.createElement("tr");
+
+        for (var x =0;x < attributes.length;x++){
+
+            var th = document.createElement("th");
+            th.innerHTML=attributes[x];
+            fix_tr.append(th);
+
+        }
+
+        var th = document.createElement("th");
+        fix_tr.append(th);
+
+        parent.append(fix_table);
+        fix_table.append(fix_thead);
+        fix_thead.append(fix_tr);
+
+
+        var error_col=violation.ERROR_COL;
+
+
+        for(var q =0; q< errors.length;q++){
+
+
+
+            var error = errors[q];
+
+            <!--var row = error.ROW.toString();-->
+
+            var cells = error.CELLS;
+
+            <!--var inputId=id+vid+row;-->
+
+
+            var fix_tr = document.createElement("tr");
+
+
+            fix_tr.style.background="#EE7942";
+
+            for (var w = 0; w< cells.length; w++){
+
+                if ( w != error_col){
+
+                var th = document.createElement("th");
+
+                th.innerHTML = cells[w];
+
+                fix_tr.append(th);}
+
+                if (w == error_col){
+
+                var th = document.createElement("th");
+
+                var input = document.createElement("input");
+
+                input.type="text";
+
+                <!--input.id=inputId;-->
+
+                th.append(input);
+
+                fix_tr.append(th);
+
+                }
+            }
+
+            var th = document.createElement("th");
+
+            var btn = document.createElement("button");
+
+            btn.style.marginLeft="50px";
+
+            btn.innerHTML="fix";
+
+            th.append(btn);
+
+            fix_tr.append(th);
+
+            fix_table.append(fix_tr);
+
+        }
+
+
+
+
+        var div_legend = document.createElement("legend");
+
+
+        div_legend.innerHTML="Next AOFD";
+        parent.append(div_legend);
+        parent.append(div_legend);
+
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

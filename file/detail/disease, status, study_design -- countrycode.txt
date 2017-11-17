@@ -1,0 +1,14 @@
+SYN_AOFD_ER (in the sense of Country): disease, status, study_design --> countrycode (0.0784313725490196)
+#
+Fever,active,clinical
+51,14,19,6,9,
+17,
+USA,US,
+Anemia,active,clinical
+16,3,20,
+2,
+IN,IND,India,
+Common cold,active,clinical
+10,12,4,5,
+15,7,
+AU,Australia,AUS,

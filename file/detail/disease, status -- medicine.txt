@@ -1,0 +1,6 @@
+ISA_AOFD_ER (in the sense of Medical): disease, status --> medicine (0.0196078431372549)
+#
+Fever,active
+14,17,19,6,9,
+51,
+Advil,IbuProfen,

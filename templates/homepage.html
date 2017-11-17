@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="tabbable" id="tabs-10414">
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#panel-data" data-toggle="tab">data</a>
+                    </li>
+                    <li>
+                        <a href="#panel-fd" data-toggle="tab">fd</a>
+                    </li>
+                    <li>
+                        <a href="#panel-ofd" data-toggle="tab">ofd</a>
+                    </li>
+                    <li>
+                        <a href="#panel-isa" data-toggle="tab">isa</a>
+                    </li>
+                    <li>
+                        <a href="#panel-aofd" data-toggle="tab">aofd</a>
+                    </li>
+                    <li>
+                        <a href="#panel-isaaofd" data-toggle="tab">isa_aofd</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="panel-data">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                {% for attribute in result[0] %}
+                                <th>
+                                    {{attribute}}
+                                </th>
+                                {% endfor %}
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for tupple in result[1] %}
+                            <tr class="info">
+                                {% for cell in tupple%}
+                                <td>
+                                    {{cell}}
+                                </td>
+                                {% endfor%}
+
+                            </tr>
+                            {% endfor%}
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane" id="panel-fd">
+                        <div class="list-group">
+                            {% for fd in result[2][0] %}
+                            <a href="#" class="list-group-item list-group-item-success">{{fd}}</a>
+                            {% endfor%}
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="panel-ofd">
+                        <div class="list-group">
+                            {% for ofd in result[2][1] %}
+                            <a href="#" class="list-group-item list-group-item-success">{{ofd}}</a>
+                            {% endfor%}
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="panel-isa">
+                        <div class="list-group">
+                            {% for isa in result[2][2] %}
+                            <a href="#" class="list-group-item list-group-item-success">{{isa}}</a>
+                            {% endfor%}
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="panel-aofd">
+                        <div class="row-fluid">
+                            <div class="span12">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        {% for attribute in result[0] %}
+                                        <th>
+                                            {{attribute}}
+                                        </th>
+                                        {% endfor %}
+
+                                    </tr>
+                                    </thead>
+                                </table>
+
+                                <div class="accordion" id="accordion-0">
+                                    <div class="accordion-group">
+                                        <div class="accordion-heading"><a class="accordion-toggle collapsed"
+                                                                          data-toggle="collapse"
+                                                                          data-parent="#accordion-0"
+                                                                          href="#accordion-element-010">country, disease
+                                            -- medicine</a></div>
+                                        <div id="accordion-element-010" class="accordion-body collapse">
+                                            <div class="accordion-inner">
+                                                <a href="#" class="list-group-item list-group-item-warning">United
+                                                    States,Fever</a>
+                                                <table class="table">
+                                                    <tr class="success">
+                                                        <th>14</th>
+                                                        <th>US</th>
+                                                        <th>United States</th>
+                                                        <th>Fever</th>
+                                                        <th>IbuProfen</th>
+                                                        <th>active</th>
+                                                        <th>clinical</th>
+                                                    </tr>
+                                                    <tr class="success">
+                                                        <th>19</th>
+                                                        <th>US</th>
+                                                        <th>United States</th>
+                                                        <th>Fever</th>
+                                                        <th>Advil</th>
+                                                        <th>active</th>
+                                                        <th>clinical</th>
+                                                    </tr>
+                                                    <tr class="success">
+                                                        <th>6</th>
+                                                        <th>US</th>
+                                                        <th>United States</th>
+                                                        <th>Fever</th>
+                                                        <th>Advil</th>
+                                                        <th>active</th>
+                                                        <th>clinical</th>
+                                                    </tr>
+                                                    <tr class="success">
+                                                        <th>9</th>
+                                                        <th>USA</th>
+                                                        <th>United States</th>
+                                                        <th>Fever</th>
+                                                        <th>IbuProfen</th>
+                                                        <th>active</th>
+                                                        <th>clinical</th>
+                                                    </tr>
+                                                    <tr class="danger">
+                                                        <th>51</th>
+                                                        <th>US</th>
+                                                        <th>United States</th>
+                                                        <th>Fever</th>
+                                                        <th>Juvisync</th>
+                                                        <th>active</th>
+                                                        <th>clinical</th>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="accordion" id="accordion-1">
+                                    <div class="accordion-group">
+                                        <div class="accordion-heading"><a class="accordion-toggle collapsed"
+                                                                          data-toggle="collapse"
+                                                                          data-parent="#accordion-1"
+                                                                          href="#accordion-element-110">country,
+                                            disease, status -- medicine</a></div>
+                                        <div id="accordion-element-110" class="accordion-body collapse">
+                                            <div class="accordion-inner">
+                                                <a href="#" class="list-group-item list-group-item-warning">United
+                                                    States,Fever,active</a>
+
+                                                <table class="table">
+                                                    <tr class="success">
+                                                        <th>14</th>
+                                                        <th>US</th>
+                                                        <th>United States</th>
+                                                        <th>Fever</th>
+                                                        <th>IbuProfen</th>
+                                                        <th>active</th>
+                                                        <th>clinical</th>
+                                                    </tr>
+                                                    <tr class="success">
+                                                        <th>19</th>
+                                                        <th>US</th>
+                                                        <th>United States</th>
+                                                        <th>Fever</th>
+                                                        <th>Advil</th>
+                                                        <th>active</th>
+                                                        <th>clinical</th>
+                                                    </tr>
+                                                    <tr class="success">
+                                                        <th>6</th>
+                                                        <th>US</th>
+                                                        <th>United States</th>
+                                                        <th>Fever</th>
+                                                        <th>Advil</th>
+                                                        <th>active</th>
+                                                        <th>clinical</th>
+                                                    </tr>
+
+                                                    <tr class="success">
+                                                        <th>9</th>
+                                                        <th>USA</th>
+                                                        <th>United States</th>
+                                                        <th>Fever</th>
+                                                        <th>IbuProfen</th>
+                                                        <th>active</th>
+                                                        <th>clinical</th>
+                                                    </tr>
+                                                    <tr class="danger">
+                                                        <th>51</th>
+                                                        <th>US</th>
+                                                        <th>United States</th>
+                                                        <th>Fever</th>
+                                                        <th>Juvisync</th>
+                                                        <th>active</th>
+                                                        <th>clinical</th>
+                                                    </tr>
+                                                </table>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion" id="accordion-2">
+                                    <div class="accordion-group">
+                                        <div class="accordion-heading"><a class="accordion-toggle collapsed"
+                                                                          data-toggle="collapse"
+                                                                          data-parent="#accordion-2"
+                                                                          href="#accordion-element-210">country,
+                                            disease, status, study_design -- medicine</a></div>
+                                        <div id="accordion-element-210" class="accordion-body collapse">
+                                            <div class="accordion-inner"><a href="#"
+                                                                            class="list-group-item list-group-item-warning">United
+                                                States,Fever,active,clinical</a>
+                                            <table class="table"><tr class="success"><th>14</th><th>US</th><th>United States</th><th>Fever</th><th>IbuProfen</th><th>active</th><th>clinical</th></tr><tr class="success"><th>19</th><th>US</th><th>United States</th><th>Fever</th><th>Advil</th><th>active</th><th>clinical</th></tr><tr class="success"><th>6</th><th>US</th><th>United States</th><th>Fever</th><th>Advil</th><th>active</th><th>clinical</th></tr><tr class="success"><th>9</th><th>USA</th><th>United States</th><th>Fever</th><th>IbuProfen</th><th>active</th><th>clinical</th></tr><tr class="danger"><th>51</th><th>US</th><th>United States</th><th>Fever</th><th>Juvisync</th><th>active</th><th>clinical</th></tr></table>
+
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion" id="accordion-3">
+                                    <div class="accordion-group">
+                                        <div class="accordion-heading"><a class="accordion-toggle collapsed"
+                                                                          data-toggle="collapse"
+                                                                          data-parent="#accordion-3"
+                                                                          href="#accordion-element-310">country,
+                                            disease, study_design -- medicine</a></div>
+                                        <div id="accordion-element-310" class="accordion-body collapse">
+                                            <div class="accordion-inner">
+                                                <a href="#" class="list-group-item list-group-item-warning">United States,Fever,clinical</a>
+                                                <table class="table"><tr class="success"><th>14</th><th>US</th><th>United States</th><th>Fever</th><th>IbuProfen</th><th>active</th><th>clinical</th></tr><tr class="success"><th>19</th><th>US</th><th>United States</th><th>Fever</th><th>Advil</th><th>active</th><th>clinical</th></tr><tr class="success"><th>6</th><th>US</th><th>United States</th><th>Fever</th><th>Advil</th><th>active</th><th>clinical</th></tr><tr class="success"><th>9</th><th>USA</th><th>United States</th><th>Fever</th><th>IbuProfen</th><th>active</th><th>clinical</th></tr><tr class="danger"><th>51</th><th>US</th><th>United States</th><th>Fever</th><th>Juvisync</th><th>active</th><th>clinical</th></tr></table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="panel-isaaofd">
+                        <div class="row-fluid">
+                            <div class="span12">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        {% for attribute in result[0] %}
+                                        <th>
+                                            {{attribute}}
+                                        </th>
+                                        {% endfor %}
+
+                                    </tr>
+                                    </thead>
+                                </table>
+
+                                <div class="accordion" id="accordion-a">
+                                    <div class="accordion-group">
+                                        <div class="accordion-heading"><a class="accordion-toggle collapsed"
+                                                                          data-toggle="collapse"
+                                                                          data-parent="#accordion-0"
+                                                                          href="#accordion-element-a1"> disease, medicine, status -- countrycode</a></div>
+                                        <div id="accordion-element-a1" class="accordion-body ">
+                                            <div class="accordion-inner">
+                                                <a href="#" class="list-group-item list-group-item-warning">Anemia,Epoetin,active</a>
+                                                <table class="table">
+                                                    <tr class="success">
+                                                        <th>13</th>
+                                                        <th>IND</th>
+                                                        <th>India</th>
+                                                        <th>Anemia</th>
+                                                        <th>Epoetin</th>
+                                                        <th>active</th>
+                                                        <th>research</th>
+                                                    </tr>
+                                                    <tr class="success">
+                                                        <th>16</th>
+                                                        <th>IN</th>
+                                                        <th>India</th>
+                                                        <th>Anemia</th>
+                                                        <th>Epoetin</th>
+                                                        <th>active</th>
+                                                        <th>clinical</th>
+                                                    </tr>
+                                                    <tr class="success">
+                                                        <th>3</th>
+                                                        <th>IN</th>
+                                                        <th>India</th>
+                                                        <th>Anemia</th>
+                                                        <th>Epoetin</th>
+                                                        <th>active</th>
+                                                        <th>clinical</th>
+                                                    </tr>
+                                                    <tr class="success">
+                                                        <th>8</th>
+                                                        <th>IND</th>
+                                                        <th>India</th>
+                                                        <th>Anemia</th>
+                                                        <th>Epoetin</th>
+                                                        <th>active</th>
+                                                        <th>research</th>
+                                                    </tr>
+                                                    <tr class="danger">
+                                                        <th>2</th>
+                                                        <th>CAN</th>
+                                                        <th>Canada</th>
+                                                        <th>Anemia</th>
+                                                        <th>Epoetin</th>
+                                                        <th>active</th>
+                                                        <th>clinical</th>
+                                                    </tr>
+
+                                                </table>
+
+
+                                                <a href="#" class="list-group-item list-group-item-warning">Fever,Advil,active</a>
+                                                <table class="table">
+                                                    <tr class="success">
+                                                        <th>19</th>
+                                                        <th>US</th>
+                                                        <th>United States</th>
+                                                        <th>Fever</th>
+                                                        <th>Advil</th>
+                                                        <th>active</th>
+                                                        <th>clinical</th>
+                                                    </tr>
+                                                    <tr class="success">
+                                                        <th>6</th>
+                                                        <th>US</th>
+                                                        <th>United States</th>
+                                                        <th>Fever</th>
+                                                        <th>Advil</th>
+                                                        <th>active</th>
+                                                        <th>clinical</th>
+                                                    </tr>
+                                                    <tr class="danger">
+                                                        <th>17</th>
+                                                        <th>AUS</th>
+                                                        <th>Australia</th>
+                                                        <th>Fever</th>
+                                                        <th>Advil</th>
+                                                        <th>active</th>
+                                                        <th>clinical</th>
+                                                    </tr>
+
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

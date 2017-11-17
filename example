@@ -1,0 +1,45 @@
+<script language="javascript">
+    var o =document.getElementById("test");
+    //创建链接
+    function createA(url,text)
+    {
+        var a = document.createElement("a");
+        a.href = url;
+        a.innerHTML = text;
+        a.style.color = "red";
+
+        o.appendChild(a);
+    }
+    createA("http://www.ffasp.com/","网页教学网");
+</script>
+
+
+---------------------------------------------------
+
+<script language="javascript">
+    var o =document.getElementById("test");
+    //创建链接
+
+    // NOTICE
+    var input={{result|tojson}}
+    function createA(url,text)
+    {
+        var a = document.createElement("a");
+        a.href = url;
+        a.innerHTML = text;
+        a.style.color = "red";
+        o.appendChild(a);
+    }
+    createA("http://www.ffasp.com/",input);
+</script>
+
+
+----------------------------------------------------
+
+<script>
+
+    obj = JSON.parse({{result|tojson}});
+    document.getElementById("test").innerHTML = obj[0].VIOLATION[0].PATTERN
+
+
+</script>

@@ -1,0 +1,6 @@
+ISA_AOFD_ER (in the sense of Medical): countrycode, disease, status --> medicine (0.0196078431372549)
+#
+US,Fever,active
+14,19,6,
+51,
+Advil,IbuProfen,

@@ -1,0 +1,14 @@
+SYN_AOFD_ER (in the sense of Country): disease, medicine, status, study_design --> countrycode (0.0784313725490196)
+#
+Fever,Advil,active,clinical
+19,6,
+17,
+USA,US,
+Common cold,Codeine,active,clinical
+10,12,4,
+15,7,
+AU,Australia,AUS,
+Anemia,Epoetin,active,clinical
+16,3,20,
+2,
+IN,IND,India,

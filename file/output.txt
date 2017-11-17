@@ -1,0 +1,49 @@
+FD: countrycode --> country
+FD: countrycode --> study_design
+OFD: country --> countrycode
+
+ISA_AOFD_ER (in the sense of Medical): disease --> medicine (0.0196078431372549)
+
+ISA_AOFD_ER (in the sense of Medical): countrycode, disease --> medicine (0.0196078431372549)
+
+FD: countrycode, medicine --> disease
+ISA_AOFD_ER (in the sense of Medical): country, disease --> medicine (0.0196078431372549)
+
+AOFD_ER (in the sense of Country): disease, status --> countrycode (0.0784313725490196)
+
+ISA_AOFD_ER (in the sense of Medical): disease, status --> medicine (0.0196078431372549)
+
+ISA_AOFD_ER (in the sense of Medical): disease, study_design --> medicine (0.0196078431372549)
+
+AOFD_ER (in the sense of Country): medicine, status --> countrycode (0.09803921568627451)
+
+ISA_AOFD_ER (in the sense of Medical): countrycode, country, disease --> medicine (0.0196078431372549)
+
+ISA_AOFD_ER (in the sense of Medical): countrycode, disease, status --> medicine (0.0196078431372549)
+
+ISA_AOFD_ER (in the sense of Medical): countrycode, disease, study_design --> medicine (0.0196078431372549)
+
+ISA_AOFD_ER (in the sense of Medical): country, disease, status --> medicine (0.0196078431372549)
+
+ISA_AOFD_ER (in the sense of Medical): country, disease, study_design --> medicine (0.0196078431372549)
+
+AOFD_ER (in the sense of Country): disease, medicine, status --> countrycode (0.0784313725490196)
+
+AOFD_ER (in the sense of Country): disease, status, study_design --> countrycode (0.0784313725490196)
+
+ISA_AOFD_ER (in the sense of Medical): disease, status, study_design --> medicine (0.0196078431372549)
+
+AOFD_ER (in the sense of Country): medicine, status, study_design --> countrycode (0.09803921568627451)
+
+ISA_AOFD_ER (in the sense of Medical): countrycode, country, disease, status --> medicine (0.0196078431372549)
+
+ISA_AOFD_ER (in the sense of Medical): countrycode, country, disease, study_design --> medicine (0.0196078431372549)
+
+ISA_AOFD_ER (in the sense of Medical): countrycode, disease, status, study_design --> medicine (0.0196078431372549)
+
+ISA_AOFD_ER (in the sense of Medical): country, disease, status, study_design --> medicine (0.0196078431372549)
+
+AOFD_ER (in the sense of Country): disease, medicine, status, study_design --> countrycode (0.0784313725490196)
+
+ISA_AOFD_ER (in the sense of Medical): countrycode, country, disease, status, study_design --> medicine (0.0196078431372549)
+
