@@ -306,7 +306,9 @@
         <!--var vid=violation.VID.toString();-->
 
         var table= document.createElement("table");
+        var tbody= document.createElement("tbody");
         table.width="100%";
+        table.className = "table";
         var thead= document.createElement("thead");
         var tr= document.createElement("tr");
 
@@ -324,7 +326,7 @@
 
         var corrects = violation.CORRECT_TUPPLES;
 
-        var tbody= document.createElement("tbody");
+        
 
         for(var q =0; q< corrects.length;q++){
 
@@ -347,8 +349,6 @@
                 tbody.append(trs);
             }
 
-
-
         }
 
         var errors = violation.ERROR_TUPPLES;
@@ -362,7 +362,11 @@
             var tr = document.createElement("tr");
 
             <!--tr.style.background="#EE7942";-->
-            tr.setAttribute("className","danger");
+            tr.setAttribute("class","danger");
+
+
+
+
 
             for (var w = 0; w< cells.length; w++){
 
@@ -372,11 +376,10 @@
 
                 tr.append(th);
             }
-
             tbody.append(tr);
+            table.append(tbody);
 
         }
-         table.append(tbody);
 
         var error_legend = document.createElement("legend");
         var error_span = document.createElement("span");
