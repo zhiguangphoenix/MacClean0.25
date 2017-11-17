@@ -348,7 +348,6 @@
             }
 
 
-            table.append(tbody);
 
         }
 
@@ -365,10 +364,6 @@
             <!--tr.style.background="#EE7942";-->
             tr.setAttribute("className","danger");
 
-
-
-
-
             for (var w = 0; w< cells.length; w++){
 
                 var th = document.createElement("th");
@@ -378,9 +373,10 @@
                 tr.append(th);
             }
 
-            table.append(tr);
+            tbody.append(tr);
 
         }
+         table.append(tbody);
 
         var error_legend = document.createElement("legend");
         var error_span = document.createElement("span");
